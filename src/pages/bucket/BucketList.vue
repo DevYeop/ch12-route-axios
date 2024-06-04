@@ -12,7 +12,12 @@
   <div class="row">
     <div class="col">
       <ul class="list-group">
-        <Item v-for="item in bucketList" :key="item.id" :todoItem="item" />
+        <Item
+          v-for="item in bucketList"
+          :key="item.id"
+          :todoItem="item"
+          :itemType="bucket"
+        />
       </ul>
     </div>
   </div>

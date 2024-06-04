@@ -24,7 +24,7 @@
           <router-link class="nav-link" to="/todos"> TodoList </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/buckets"> BucketList </router-link>
+          <router-link class="nav-link" to="/bucket"> BucketList </router-link>
         </li>
       </ul>
     </div>

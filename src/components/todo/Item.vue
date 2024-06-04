@@ -6,6 +6,8 @@
         : 'list-group-item'
     "
     @click="toggleDone(todoItem.id)"
+    @mouseover="isHoverEdit = true"
+    @mouseleave="isHoverEdit = false"
   >
     <span :class="todoItem.done ? 'todo-done pointer' : 'pointer'">
       {{ todoItem.todo }}
@@ -19,7 +21,7 @@
       "
       @click.stop="router.push(`/todos/edit/${todoItem.id}`)"
       @mouseover="isHoverEdit = true"
-      @mouseleave="isHoverEdit = false"
+      @mouseleave="isHoverDel = false"
       ><!-- 이때 전달되는 ${todoItem.id}는 reouter/index.js에서 명시해놨던데로 id로 들어간다   -->
 
       편집</span
