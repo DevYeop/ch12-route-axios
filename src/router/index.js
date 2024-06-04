@@ -1,0 +1,29 @@
+import { createRouter, createWebHistory } from 'vue-router';
+import Home from '@/pages/Home.vue';
+import About from '@/pages/About.vue';
+import TodoList from '@/pages/TodoList.vue';
+import AddTodo from '@/pages/AddTodo.vue';
+import EditTodo from '@/pages/EditTodo.vue';
+import NotFound from '@/pages/NotFound.vue';
+
+import BucketList from '@/pages/bucket/BucketList.vue';
+import AddBucket from '@/pages/bucket/AddBucket.vue';
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    { path: '/', component: Home },
+    { path: '/about', component: About },
+    { path: '/todos', component: TodoList },
+    { path: '/todos/add', component: AddTodo },
+    { path: '/todos/edit/:id', component: EditTodo }, // edit/{이자리}    로 받는 데이터는 params의 id로 받게된다
+
+    { path: '/buckets', component: BucketList },
+    { path: '/buckets/add', component: AddBucket },
+    { path: '/buckets/edit/:id', component: EditTodo },
+
+    { path: '/:paths(.*)*', component: NotFound },
+  ],
+});
+
+export default router;
