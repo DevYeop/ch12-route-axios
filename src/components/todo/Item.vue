@@ -45,12 +45,17 @@
 import { useRouter } from 'vue-router';
 import { inject, ref } from 'vue';
 
+import { useTodoListStore } from '@/stores/todoList.js';
+
+const todoListStore = useTodoListStore();
+
 defineProps({
   todoItem: { Type: Object, required: true },
 });
 
 const router = useRouter();
-const { deleteTodo, toggleDone } = inject('actions');
+// const { deleteTodo, toggleDone } = inject('actions');
+const { deleteTodo, toggleDone } = todoListStore;
 
 const isHoverDel = ref(false);
 const isHoverEdit = ref(false);

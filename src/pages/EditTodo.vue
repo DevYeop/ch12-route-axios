@@ -51,6 +51,7 @@
 <script setup>
 import { inject, reactive } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+import { useTodoListStore } from '@/stores/todoList.js';
 
 const router = useRouter(); // push() 등 라우터를 조직하기 위해 쓴다 (라우터는 라우팅을 시키는 주체다)
 const currentRoute = useRoute(); // 현재 라우팅된 곳의 정보를 활용할 때 쓴다
@@ -59,10 +60,11 @@ console.log('currentRoute', currentRoute.path);
 console.log('currentRoute', currentRoute.params);
 console.log('currentRoute', currentRoute.query);
 
-const todoList = inject('todoList');
-const { updateTodo } = inject('actions');
+// const todoList = inject('todoList');
+// const { updateTodo } = inject('actions');
+const { todoList, updateTodo } = useTodoListStore();
 
-const matchedTodoItem = todoList.value.find(
+const matchedTodoItem = todoList.find(
   (item) => item.id === currentRoute.params.id
   // router/indexjs에서 { path: '/todos/edit/:id', component: EditTodo }, 로 설정해둿기 때문에, id라는 변수명으로 데이터를 받아먹을 수 있었던 것이다.
 );

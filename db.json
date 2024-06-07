@@ -3,19 +3,14 @@
     {
       "id": "4",
       "todo": "ES6 공부",
-      "desc": "ES6공부를 해야 합니다",
-      "done": false
-    },
-    {
-      "id": "4c0d",
-      "todo": "ㅎㅎ",
-      "desc": "ㅎㅎ",
+      "desc": "ES6공부를 해야 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ합니다",
       "done": true
     },
     {
-      "id": "622a",
-      "todo": "애니",
-      "desc": "11"
+      "id": "4c0d",
+      "todo": "ㅎㅎㅋ",
+      "desc": "ㅎㅎㅋ",
+      "done": true
     }
   ],
   "buckets": [

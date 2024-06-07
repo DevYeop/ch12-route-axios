@@ -47,9 +47,13 @@
 <script setup>
 import { inject, reactive } from 'vue';
 import { useRouter } from 'vue-router';
+import { useTodoListStore } from '@/stores/todoList.js';
 
 const router = useRouter();
-const { addTodo } = inject('actions');
+
+// const { addTodo } = inject('actions');
+const { addTodo } = useTodoListStore();
+
 const todoItem = reactive({ todo: '', desc: '' });
 
 const addTodoHandler = () => {
